@@ -1,3 +1,3 @@
 # ReactPractice
 Practice for React.js
-Pokedex
+Pokedex web
