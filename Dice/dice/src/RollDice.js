@@ -27,14 +27,16 @@ class RollDice extends Component{
     }
     render(){
         return(
-        <div>
+        <div className="RollDice">
         <h1>RollDice game</h1>
-        <div>
+        <div >
         <Die face= {this.state.die1}/>
         <Die face={this.state.die2}/>
         </div>
+        <div className="RollDice">
         <button onClick={this.roll}>
         Roll Dice!</button>
+        </div>
         </div>
         
         )}
