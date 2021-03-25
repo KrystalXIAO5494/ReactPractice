@@ -6,8 +6,14 @@ import './RollDice.css';
 class RollDice extends Component{
     render(){
         return(
-        <h1>RollDice</h1>)
-    }
+        <div>
+        <h1>RollDice game</h1>
+        <Die/>
+        <Die/>
+        <button>RollDice</button>
+        </div>
+        
+        )}
 }
 
 export default RollDice;
