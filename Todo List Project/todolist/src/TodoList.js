@@ -9,8 +9,15 @@ class TodoList extends React.Component {
         super(props);
         this.state = {
           todos: [{task:"walk the fish"},{task:"Groom Chickens"}]
-        }
+        };
+        this.create =this.create.bind(this);
       }
+
+    create(newTodo){
+        this.setState({
+            todos:[...this.state.todos,newTodo]
+        })
+    }
    
     render() {
       const todos = this.state.todos.map(todo =>{
@@ -19,6 +26,7 @@ class TodoList extends React.Component {
       return (
         <div>
         <h1>Todo List!</h1>
+        <NewTodoForm createTodo={this.create}/>
         <ul>
             {todos}
         </ul>

@@ -5,38 +5,39 @@ import "./NewTodoForm.css"
 class NewTodoForm extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {newTodo: []};
+      this.state = {task:""};
   
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
   
-    handleChange(e) {
+    handleChange(evt) {
         this.setState({
-            newTodo: [ ...this.state.newTodo, e.target.value],
-          }, () => {
-            console.log(this.state.newTodo);
-          });
+            [evt.target.name]:evt.target.value
+        })
     }
-  
-    handleSubmit(e) {
-        e.preventDefault();
-        this.setState({
-            newTodo: [ ...this.state.newTodo, e.target.value],
-          }, () => {
-            console.log(this.state.newTodo);
-          });
-        }
+    handleSubmit(evt) {
+        evt.preventDefault();
+        this.props.createTodo(this.state);
+        this.setState({task:""})
+    }
     
   
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <label>
+          <label htmlFor="task">
             New Todo
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Add TODO" />
+            </label>
+            <input 
+            type="text" 
+            placeholder="New Todo" 
+            id ='task' 
+            value={this.state.task}
+            onChange={this.handleChange}
+            name ='task'
+            />
+            <button>Add Todo</button>
         </form>
       );
     }
