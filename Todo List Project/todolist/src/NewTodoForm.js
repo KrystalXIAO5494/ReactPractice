@@ -26,6 +26,7 @@ class NewTodoForm extends React.Component {
   
     render() {
       return (
+        <div className="newForm">
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="task">
             New Todo
@@ -40,6 +41,7 @@ class NewTodoForm extends React.Component {
             />
             <button>Add Todo</button>
         </form>
+        </div>
       );
     }
 }

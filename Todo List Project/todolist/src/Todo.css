@@ -1,3 +1,24 @@
 .completed{
     color:lightgray;
 }
+.todo button {
+    padding: 0 1.3rem;
+    border: none;
+    background: #ff6666;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease-out;
+  }
+  
+  .todo button:hover {
+    background: #ff5e5e;
+  }
+  
+  .todo label {
+    position: relative;
+    transition: opacity 0.2s linear;
+  }
